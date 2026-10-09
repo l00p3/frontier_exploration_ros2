@@ -10,30 +10,56 @@
 [![Test](https://img.shields.io/github/actions/workflow/status/mertgulerx/frontier-exploration-ros2/jazzy-test.yml?branch=main&style=for-the-badge&label=test)](https://github.com/mertgulerx/frontier-exploration-ros2/actions/workflows/jazzy-test.yml)
 [![DOI](https://zenodo.org/badge/1203069374.svg)](https://doi.org/10.5281/zenodo.22964253)
 
-### Contributors
-
 <table>
   <tr>
-    <td align="center">
-      <a href="https://github.com/mertgulerx">
-        <img src="https://github.com/mertgulerx.png" width="48" alt="mertgulerx"/><br>
-        <sub><b>mertgulerx</b></sub>
-      </a>
+    <td width="25%" valign="top">
+      <h3>Contributors</h3>
+      <table>
+        <tr>
+          <td>
+            <a href="https://github.com/mertgulerx">
+              <img src="https://github.com/mertgulerx.png" width="36" alt="mertgulerx" />
+            </a>
+          </td>
+          <td>
+            <a href="https://github.com/mertgulerx"><b>mertgulerx</b></a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <a href="https://github.com/cord-burmeister">
+              <img src="https://github.com/cord-burmeister.png" width="36" alt="cord-burmeister" />
+            </a>
+          </td>
+          <td>
+            <a href="https://github.com/cord-burmeister"><b>cord-burmeister</b></a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <a href="https://github.com/TsXor">
+              <img src="https://github.com/TsXor.png" width="36" alt="TsXor" />
+            </a>
+          </td>
+          <td>
+            <a href="https://github.com/TsXor"><b>TsXor</b></a>
+          </td>
+        </tr>
+      </table>
     </td>
-    <td align="center">
-      <a href="https://github.com/cord-burmeister">
-        <img src="https://github.com/cord-burmeister.png" width="48" alt="cord-burmeister"/><br>
-        <sub><b>cord-burmeister</b></sub>
-      </a>
-    </td>
-    <td align="center">
-      <a href="https://github.com/TsXor">
-        <img src="https://github.com/TsXor.png" width="48" alt="cord-burmeister"/><br>
-        <sub><b>TsXor</b></sub>
-      </a>
+    <td width="75%" valign="top">
+      <h3>Star History</h3>
+<a href="https://www.star-history.com/?repos=mertgulerx%2Ffrontier_exploration_ros2&type=date&legend=top-left">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=mertgulerx/frontier_exploration_ros2&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=mertgulerx/frontier_exploration_ros2&type=date&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=mertgulerx/frontier_exploration_ros2&type=date&legend=top-left" />
+ </picture>
+</a>
     </td>
   </tr>
 </table>
+
 
 > [!NOTE]
 > **Academic publication in preparation**

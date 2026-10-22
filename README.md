@@ -257,74 +257,25 @@ The TurtleBot3 Waffle Pi is also a relatively small and slow robot, so parameter
 
 ## Flowchart Diagram
 
-```
-           +-------------------------+
-+----------| Map & Costmap Input     |
-|          +-------------------------+
-|                       |
-|                       v
-|          +-------------------------+
-|          | Decision-Map            |
-|          | Optimization            |
-|          +-------------------------+
-|                       |
-|                       v
-|          +-------------------------+
-|          | WFD-Style               |
-|          | Frontier Extraction     |
-|          +-------------------------+
-|                       |
-|                       v
-|          +---------------------------+
-|          | Build MRTSP Candidate Set |
-|          | and Cost Matrix           |
-|          +---------------------------+
-|                       |
-|                       v
-|              .----------------.
-|            /                    \
-|           /   MRTSP Solver       \
-|          /      Selection         \
-|         v                        v
-|      greedy                      dp
-|        |                         |
-|        v                         v
-|  +----------------+   +---------------------------+
-|  | Greedy Matrix  |   | Score, Prune, and Search  |
-|  | Traversal      |   | Bounded DP Horizon        |
-|  +----------------+   +---------------------------+
-|             \             /
-|              v           v
-|       +-----------------------+
-|       | Ordered Frontier      |
-|       | Sequence              |
-|       +-----------------------+
-|                  |
-|                  v
-|          +-------------------------+
-|          | Dispatch Goal via Nav2  |
-|          +-------------------------+
-|                       |
-|                       v
-|          +-------------------------+
-|          | Monitor & Handle        |
-|          | Preemption/Blocking     |
-|          +-------------------------+
-|                       |
-|                       v
-|                  .-----------.
-|                /               \
-|               /     Frontiers    \
-|              /     Exhausted?     \
-|             v                   v
-|            No                  Yes
-|             |                   |
-|             |                   v
-|             |          +---------------------------+
-|             |          | Publish Completion Event  |
-|             |          +---------------------------+
-|             |
-+-------------+
+```mermaid
+flowchart TD
+    A["Map & Costmap Input"] --> B["Decision-Map Optimization"]
+    B --> C["WFD-Style Frontier Extraction"]
+    C --> D["Build MRTSP Candidate Set and Cost Matrix"]
+    D --> E{"MRTSP Solver Selection"}
+
+    E -->|greedy| F["Greedy Matrix Traversal"]
+    E -->|dp| G["Score, Prune, and Search Bounded DP Horizon"]
+
+    F --> H["Ordered Frontier Sequence"]
+    G --> H
+
+    H --> I["Dispatch Goal via Nav2"]
+    I --> J["Monitor & Handle Preemption/Blocking"]
+    J --> K{"Frontiers Exhausted?"}
+
+    K -->|No| A
+    K -->|Yes| L["Publish Completion Event"]
 ```
 
 ## Demo Repository

@@ -29,7 +29,9 @@ def _create_frontier_actions(context):
     use_sim_time = LaunchConfiguration("use_sim_time")
     log_level = LaunchConfiguration("log_level")
     autostart_value = LaunchConfiguration("autostart").perform(context)
-    control_service_enabled_value = LaunchConfiguration("control_service_enabled").perform(context)
+    control_service_enabled_value = LaunchConfiguration(
+        "control_service_enabled"
+    ).perform(context)
     map_qos_durability = LaunchConfiguration("map_qos_durability")
     map_qos_autodetect_on_startup = LaunchConfiguration("map_qos_autodetect_on_startup")
     map_qos_autodetect_timeout_s = LaunchConfiguration("map_qos_autodetect_timeout_s")
@@ -71,7 +73,7 @@ def _create_frontier_actions(context):
 
 def generate_launch_description():
     pkg_share = get_package_share_directory("frontier_exploration_ros2")
-    default_params = (Path(pkg_share) / "config" / "params.yaml")
+    default_params = Path(pkg_share) / "config" / "params.yaml"
 
     return LaunchDescription(
         [
@@ -129,5 +131,17 @@ def generate_launch_description():
                 description="Costmap reliability: reliable | best_effort | system_default.",
             ),
             OpaqueFunction(function=_create_frontier_actions),
+            Node(
+                package="hortilu",
+                executable="evaluation_node",
+                name="evaluation_node",
+                output="screen",
+                parameters=[
+                    {
+                        "use_sim_time": True,
+                        "base_frame": "base_link",
+                    }
+                ],
+            ),
         ]
     )

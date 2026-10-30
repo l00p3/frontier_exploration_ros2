@@ -131,17 +131,5 @@ def generate_launch_description():
                 description="Costmap reliability: reliable | best_effort | system_default.",
             ),
             OpaqueFunction(function=_create_frontier_actions),
-            Node(
-                package="hortilu",
-                executable="evaluation_node",
-                name="evaluation_node",
-                output="screen",
-                parameters=[
-                    {
-                        "use_sim_time": True,
-                        "base_frame": "base_link",
-                    }
-                ],
-            ),
         ]
     )
